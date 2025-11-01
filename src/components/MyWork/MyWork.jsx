@@ -1,8 +1,7 @@
 import React from 'react'
 import './MyWork.css';
 import theme_pattern from '../../assets/theme_pattern.svg';
-import mywork_data from '../../assets/mywork_data';
-// import arrow_icon from '../../assets/arrow_icon.svg';
+import arrow_icon from '../../assets/arrow_icon.svg';
 import shoppingCart from "../../assets/project_1.png";
 import blogPost from "../../assets/project_2.jpg";
 
