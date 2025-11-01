@@ -1,38 +1,47 @@
-    .mywork {
+/* ===================== MyWork Section ===================== */
+.mywork {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 80px;
     margin: 80px 170px;
-    }
+}
 
-    .mywork-title {
+/* Title */
+.mywork-title {
     position: relative;
-    }
+    width: 100%;
+}
 
-    .mywork-title h1 {
-    padding: 0px 30px;
+.mywork-title h1 {
     font-size: 80px;
     font-weight: 600;
-    }
+    padding: 0 30px;
+    margin: 0;
+    line-height: 1.2;
+}
 
-    .mywork-title img {
+.mywork-title img {
     position: absolute;
     bottom: 0;
     right: 0;
     z-index: -1;
-    }
+    width: 180px;
+    opacity: 0.6;
+}
 
-    .mywork-container {
+/* Grid Container for Projects */
+.mywork-container {
     display: grid;
-    grid-template-columns: 1fr  1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 40px;
+    width: 100%;
     margin-bottom: 80px;
-    }
+}
 
-    /* 🧩 Project card box */
-    .project-card {
+/* Project Card */
+.project-card {
     background: #1e1e1e;
     border: 2px solid #ffffff40;
     border-radius: 15px;
@@ -45,39 +54,43 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    }
+}
 
-    .project-card:hover {
+.project-card:hover {
     transform: scale(1.05);
     border: 2px solid #ff00ff;
     box-shadow: 0 0 15px #ff00ff55;
-    }
+}
 
-    /* 🖼 Image inside the card */
-    .project-card img {
+/* Project Image */
+.project-card img {
     width: 100%;
     height: 220px;
     object-fit: cover;
     border-radius: 10px;
     margin-bottom: 15px;
-    transition: 0.3s;
-    }
+    transition: transform 0.3s ease;
+}
 
-    /* 🧾 Text content */
-    .project-card h3 {
+.project-card img:hover {
+    transform: scale(1.03);
+}
+
+/* Project Text */
+.project-card h3 {
     font-size: 22px;
     margin-bottom: 10px;
     color: #ff00ff;
-    }
+}
 
-    .project-card p {
+.project-card p {
     font-size: 15px;
     line-height: 1.5;
     color: #ccc;
-    }
+}
 
-    /* 🔻 Show More section */
-    .mywork-showmore {
+/* Show More Button */
+.mywork-showmore {
     display: flex;
     gap: 15px;
     border-radius: 50px;
@@ -88,30 +101,34 @@
     margin-bottom: 80px;
     transition: 0.6s;
     cursor: pointer;
-    }
+    align-items: center;
+    justify-content: center;
+}
 
-    .mywork-showmore:hover {
+.mywork-showmore:hover {
     gap: 30px;
     border: 4px solid #ff00ff;
-    }
+}
 
-    /* 📱 Responsive */
-    @media (max-width: 768px) {
+/* ===================== Responsive ===================== */
+
+/* Medium Devices: Tablets */
+@media (max-width: 992px) {
     .mywork {
         gap: 50px;
-        margin: 50px 70px;
-        align-items: start;
+        margin: 50px 50px;
+        align-items: flex-start;
     }
 
     .mywork-title h1 {
-        padding: 0;
         font-size: 50px;
-        font-weight: 600;
+        padding: 0 10px;
     }
 
     .mywork-title img {
         width: 130px;
-        margin-right: -20px;
+        bottom: -10px;
+        right: -10px;
     }
 
     .mywork-container {
@@ -128,14 +145,69 @@
         font-size: 18px;
         margin: 50px auto;
     }
-    }
+}
 
-    @media (max-width: 500px) {
+/* Small Devices: Phones */
+@media (max-width: 768px) {
     .mywork-container {
         grid-template-columns: 1fr;
-    }
+        gap: 25px;
     }
 
+    .mywork-title h1 {
+        font-size: 40px;
+    }
+
+    .project-card img {
+        height: 160px;
+    }
+
+    .project-card h3 {
+        font-size: 20px;
+    }
+
+    .project-card p {
+        font-size: 14px;
+    }
+
+    .mywork-showmore {
+        padding: 15px 30px;
+        font-size: 16px;
+    }
+}
+
+/* Extra Small Devices: Small Phones */
+@media (max-width: 480px) {
+    .mywork {
+        margin: 30px 20px;
+        gap: 40px;
+    }
+
+    .mywork-title h1 {
+        font-size: 32px;
+    }
+
+    .mywork-title img {
+        width: 100px;
+    }
+
+    .project-card img {
+        height: 140px;
+    }
+
+    .project-card h3 {
+        font-size: 18px;
+    }
+
+    .project-card p {
+        font-size: 13px;
+    }
+
+    .mywork-showmore {
+        padding: 12px 25px;
+        font-size: 14px;
+    }
+}
 
 /* .mywork{
     display: flex;
@@ -204,7 +276,7 @@
     border: 4px solid #ff00ff;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
     .mywork{
         gap: 50px;
         margin: 50px 70px;

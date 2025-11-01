@@ -1,11 +1,15 @@
-.navbar{
+/* ===================== Navbar ===================== */
+.navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin: 20px 170px;
+    position: relative;
+    z-index: 10;
 }
 
-.nav-menu{
+/* Navigation Menu */
+.nav-menu {
     display: flex;
     align-items: center;
     list-style: none;
@@ -13,84 +17,149 @@
     font-size: 22px;
 }
 
-.nav-connect{
+/* Individual Nav Items */
+.nav-menu li {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    position: relative;
+}
+
+.nav-menu li img {
+    display: flex;
+    margin: auto;
+}
+
+/* Anchor Links */
+.anchor-link {
+    text-decoration: none;
+    color: white;
+}
+
+/* Connect Button */
+.nav-connect {
     padding: 19px 30px;
     border-radius: 50px;
     background: linear-gradient(267deg, #DA7C25 0.36%, #B923E1 102.06%);
     font-size: 22px;
     cursor: pointer;
-    transition: 1.1s;
+    transition: transform 0.3s ease;
 }
 
-.nav-connect:hover{
-    transform: scale(1.2);
+.nav-connect:hover {
+    transform: scale(1.1);
 }
 
-.nav-menu li{
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+/* Mobile Menu Buttons */
+.nav-mob-open,
+.nav-mob-close {
+    display: none;
     cursor: pointer;
+    z-index: 20;
 }
 
-.nav-menu li img{
-    display: flex;
-    margin: auto;
-}
+/* ===================== Responsive ===================== */
 
-.anchor-link{
-    text-decoration: none;
-    color: white;
-}
-
-.nav-mob-open{
-    display: none;
-}
-.nav-mob-close{
-    display: none;
-}
-
-@media(max-width: 768px){
-    .navbar{
+/* Medium Devices: Tablets */
+@media (max-width: 992px) {
+    .navbar {
         margin: 20px 50px;
     }
 
-    .nav-connect{
+    .nav-connect {
         display: none;
     }
 
-    .nav-mob-open{
+    .nav-mob-open {
         display: block;
         position: fixed;
         right: 30px;
-    }
-
-    .nav-mob-close{
-        display: block;
-        position: relative;
-        top: 30px;
-        left: 290px;
+        top: 25px;
         width: 30px;
+        height: 30px;
+        z-index: 20;
     }
 
-    .nav-menu{
+    .nav-mob-close {
+        display: block;
+        position: absolute;
+        top: 25px;
+        right: 20px;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        z-index: 21;
+    }
+
+    .nav-menu {
         position: fixed;
         flex-direction: column;
         align-items: start;
         top: 0;
-        gap: 30px;
-        background-color: #1F0016;
-        width: 350px;
-        height: 100%;
-        z-index: 2;
-        transition : right 0.5s;
         right: -350px;
+        width: 300px;
+        height: 100%;
+        background-color: #1F0016;
+        padding-top: 80px;
+        gap: 30px;
+        z-index: 15;
+        transition: right 0.4s ease-in-out;
+        overflow-y: auto;
     }
 
-    .nav-menu li{
-        font-size: 30px;
-        padding-left: 100px;
+    .nav-menu li {
+        font-size: 24px;
+        padding-left: 30px;
         flex-direction: row;
+        gap: 15px;
+    }
+}
+
+/* Small Devices: Phones */
+@media (max-width: 768px) {
+    .navbar {
+        margin: 15px 30px;
+    }
+
+    .nav-menu {
+        width: 250px;
+        padding-top: 70px;
+    }
+
+    .nav-menu li {
+        font-size: 22px;
+        padding-left: 25px;
+        gap: 10px;
+    }
+}
+
+/* Extra Small Devices: Small Phones */
+@media (max-width: 480px) {
+    .navbar {
+        margin: 10px 20px;
+    }
+
+    .nav-menu {
+        width: 220px;
+        padding-top: 60px;
         gap: 20px;
+    }
+
+    .nav-menu li {
+        font-size: 20px;
+        padding-left: 20px;
+    }
+
+    .nav-mob-open {
+        width: 25px;
+        height: 25px;
+        top: 20px;
+    }
+
+    .nav-mob-close {
+        width: 25px;
+        height: 25px;
+        top: 20px;
     }
 }
