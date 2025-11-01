@@ -1,0 +1,20 @@
+.logo{
+    display: inline-block;
+    position: relative;
+}
+
+.logo h1 {
+    color: white;
+    padding: 0px 30px;
+    font-size: 40px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+}
+
+.logo img{
+    position: absolute;
+    height: 40px;
+    z-index: -1;
+    right: 0;
+    bottom: 0;
+}
